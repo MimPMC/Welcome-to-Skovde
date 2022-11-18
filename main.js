@@ -5,22 +5,44 @@ let scene = 0
 let playerName
 
 function main() {
-    loadStartScene();
-
+    loadStartScene()
 }
 
-function playSound() {
-    if (scene == 0 ) {
-        const audio = new Audio('./creepy.wav');
-        audio.volume = 0.2;
-        audio.setAttribute = "loop"
-        audio.play();
+window.addEventListener('load', function(){
+    let myAudio = document.getElementById("myAudio");
+    myAudio.volume = 0.2;
+    
+    myAudio.onplaying = function() {
+      isPlaying = true;
+    };
+    myAudio.onpause = function() {
+      isPlaying = false;
+    };
+})
+let isPlaying = false;
+function togglePlay() {
+    if (isPlaying) {
+        myAudio.pause()
+        const toggleImg = document.getElementById("play-audio-button")
+        toggleImg.src = "./stop-audio.png" 
+    } else {
+        myAudio.play();
+        const toggleImg = document.getElementById("play-audio-button")
+        toggleImg.src = "./play-audio.png"
     }
-}
-
+}   window.addEventListener('load', function(){
+    let myAudio = document.getElementById("myAudio");
+    
+    myAudio.onplaying = function() {
+      isPlaying = true;
+   
+    };
+    myAudio.onpause = function() {
+      isPlaying = false;
+    };
+});
 
 function loadStartScene() {
-
     
     const startImage = document.createElement("img")
     startImage.src = "./skovde-bg.png"
@@ -55,6 +77,48 @@ function loadStartScene() {
         }
         else {
             console.log(playerName)
+            loadSceneTwo();
         }
     }
+ }
+
+ function loadSceneTwo () {
+    scene = 1;
+    document.getElementById('game-container').innerHTML = ""
+
+    const startImage = document.createElement("img")
+    startImage.src = "./skovde-bg.png"
+    startImage.className = "start-bg-img"
+    gameContainer.appendChild(startImage);
+
+    const gameTitle = document.createElement("h1");
+    gameTitle.textContent = "Hej, "+ playerName + "! Vart vill du gå?";
+    gameTitle.className ="game-title"
+    gameContainer.appendChild(gameTitle);
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.className ="button-div-scene-2"
+    gameContainer.appendChild(buttonDiv);
+
+    const button1 = document.createElement("button")
+    button1.className = "button-choice-1 btn"
+    button1.textContent = "Centrum"
+    buttonDiv.appendChild(button1);
+
+    const button2 = document.createElement("button")
+    button2.className = "button-choice-1 btn"
+    button2.textContent = "Universitetet"
+    buttonDiv.appendChild(button2);
+
+
+
+
+
+
+
+
+    
+
+
+
  }
