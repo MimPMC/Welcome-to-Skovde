@@ -14,24 +14,32 @@ body {
     background-color: #333;
 }
 #game-container {
-    height: 70%;
-    width: 70rem;
-    max-width: 80%;
+    height: 40rem;
+    width: 67rem;
+    max-width: 100%;
     background-color: rgb(245, 238, 238);
     border-radius: 1px;
 }
 
+#play-sound {
+    padding-top: 8px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1; 
+}
+
+
 .btn {
-    background-color: hsl(332, 55%, 51%);
-    border: 1px solid  hsl(330, 72%, 35%);
+    background-color: hsl(239, 17%, 48%);
+    border-color: 1px rgb(24, 105, 88);
     border-radius: 5px;
-    padding:  5px 10px;
+    padding:  1px 7px;
     color: white;
     outline:none;
 }
 .btn:hover {
-    background-color: hsl(332, 55%, 61%);
-    border: 1px solid  hsl(330, 72%, 50%);
+    background-color: hsl(244, 29%, 67%);
+    border: 1px solid  hsl(249, 26%, 46%);
     transition: 300ms;
 }
 
