@@ -5,7 +5,7 @@ let scene = 0
 let playerName
 
 function main() {
-    loadStartScene()
+    loadSceneSix()
 }
 
 window.addEventListener('load', function(){
@@ -301,5 +301,42 @@ function loadSceneSix() {
     startImage.src = "./images/mcdonuts_1_dark.png"
     startImage.className = "start-bg-img"
     gameContainer.appendChild(startImage);
+
+    const skovdeCentrumText = document.createElement('div')
+    skovdeCentrumText.className = ("centrum-text mcdonk-six")
+    skovdeCentrumText.textContent = "Vad händer? Det verkar som Mcdonalds stängt..."
+    gameContainer.appendChild(skovdeCentrumText);
+
+
+
+    setTimeout(() => {
+        console.log("Delayed for 10 second.");
+        skovdeCentrumText.textContent = "Dörrarna är låsta... Var tog personalen vägen?"
+
+        const donk = document.createElement("img")
+        donk.src = "./images/donk-0.png"
+        donk.className = "donk"
+        gameContainer.appendChild(donk);
+        donk2()
+     
+        }, 2000)
+
+    function donk2() {
+        setTimeout(() => {
+            console.log("Delayed for 10 second.");
+            skovdeCentrumText.textContent = "Dörrarna är låsta... Var tog personalen vägen?"
+
+            
+    
+    
+            const donk = document.createElement("img")
+            donk.src = "./images/donk-3.png"
+            donk.className = "donk-3"
+            gameContainer.appendChild(donk);
+         
+            }, 4000)
+    }
+    
+    
 
 }

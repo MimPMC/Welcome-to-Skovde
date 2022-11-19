@@ -92,3 +92,20 @@
     border-color: rgb(255, 255, 71);
     
 }
+
+.mcdonk-six {
+    top: 90%;
+}
+
+.donk {
+    position: absolute;
+    width: 2.5rem;
+    top: 38.5%;
+    left:40%;
+}
+.donk-3 {
+    position: absolute;
+    width: 5rem;
+    top: 40.5%;
+    left:35%;
+}
