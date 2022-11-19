@@ -5,7 +5,7 @@ let scene = 0
 let playerName
 
 function main() {
-    loadSceneFive()
+    loadStartScene()
 }
 
 window.addEventListener('load', function(){
@@ -177,6 +177,8 @@ function loadSceneThree() {
         if (dayOrNight) {
             alert ("You walk into MCdonalds!");
             Mcdonalds = true;
+            myAudio.setAttribute('src', "./mcdonalds.wav");
+            myAudio.volume = 0.5;
             console.log("test-1")
             dayOrNight = 1;
             loadSceneFive();
@@ -225,8 +227,7 @@ function loadSceneFour() {
     backButton.addEventListener('click', loadSceneThree)
 }
 function loadSceneFive() {
-    myAudio.setAttribute('src', "./mcdonalds.wav");
-    myAudio.volume = 0.5;
+
     
     console.log("scene5")
     scene = 5
@@ -254,35 +255,40 @@ function loadSceneFive() {
     addFoodButton.className = "btn addfood-button"
     addFoodButton.textContent = "Lägg till"
     buttonDiv1.appendChild(addFoodButton);
+    addFoodButton.addEventListener('click', addFoodToOrder)
 
 
     const orderListDiv = document.createElement('div')
     orderListDiv.className = ("order-list-div")
+    addFoodButton.textContent = "Lägg till"
     gameContainer.appendChild(orderListDiv);
 
 
     const myOrder = document.createElement('ul')
     myOrder.className = ("my-order-list")
+    myOrder.textContent = "Din beställning:"
     orderListDiv.appendChild(myOrder);
 
+    const myOrderButton = document.createElement('button')
+    myOrderButton.className = ("my-order-list my-order-list-button")
+    myOrderButton.textContent = "Skicka order"
+    orderListDiv.appendChild(myOrderButton);
+    myOrderButton.addEventListener('click', clearOrder)
 
-
-    
-
-    
-
-
-
-
-
-    /*setTimeout(() => {
+    function addFoodToOrder() {
+        let newListItem = document.createElement('li')
+        newListItem.textContent = inputOrder.value
+        myOrder.appendChild(newListItem);
+        inputOrder.value = ""
+    }
+    function clearOrder() {
+        loadSceneFive()       
+    }
+    setTimeout(() => {
         console.log("Delayed for 60 second.");
-        startImage.src = "./images/mcdonuts_1_dark.png"
         loadSceneSix();
-      }, 60000)
-    */
-
-
+      }, 30000)
+    
 }
 
 function loadSceneSix() {

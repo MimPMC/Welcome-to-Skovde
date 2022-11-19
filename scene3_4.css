@@ -31,9 +31,11 @@
 
 .mcdonalds-order {
     top: 80%;
+    color: rgb(255, 255, 132);
+    font-family: 'Sigmar One', cursive;
     background-color: hsla(2, 93%, 47%, 0.6);
     border-color: rgb(77, 10, 10);
-    padding: 0.7rem;
+    padding: 0.2rem;
     width: auto;
     left: 21%;
 }
@@ -60,10 +62,33 @@
 
 .order-list-div {
     position: absolute;
+    padding: 0.2rem;
     top: 1%;
     right: 1%;
     background-color: hsla(54, 89%, 93%, 0.6);
     color: black;
-    width: 20rem;
-    height: 2rem;
+    width: 12rem;
+    height: auto;
+}
+
+.my-order-list {
+    font-family: 'Sigmar One', cursive;
+    font-size: 1rem;
+    color: rgb(151, 1, 1);
+    margin: 2px;
+    padding-top: 0;
+    padding-left: 0.7rem;
+    list-style: none;
+}
+.my-order-list-button {
+    position: relative;
+    left: 10%;
+    background-color: rgb(250, 232, 69);
+    border-color: rgb(202, 202, 1);
+    
+}
+.my-order-list-button:hover {
+    background-color: rgb(255, 242, 130);
+    border-color: rgb(255, 255, 71);
+    
 }
