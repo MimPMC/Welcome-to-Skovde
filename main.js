@@ -5,7 +5,7 @@ let scene = 0
 let playerName
 
 function main() {
-    loadSceneSix()
+    loadStartScene()
 }
 
 window.addEventListener('load', function(){
@@ -326,7 +326,7 @@ function loadSceneSix() {
             console.log("Delayed for 10 second.");
             skovdeCentrumText.textContent = "Dörrarna är låsta... Var tog personalen vägen?"
 
-            
+
     
     
             const donk = document.createElement("img")
